@@ -2,24 +2,33 @@
  * @param {number[]} numbers an array of integers
  * @returns {number} the length of the array
  */
+let number = [28,-15,30,975,400];
 function getLength(numbers) {
   // TODO
+  return number.length;
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the sum of the numbers
  */
-function getSum(numbers) {
-  // TODO
-}
 
+function getSum(numbers) {
+  let sum = 0;
+  for (let i = 0; i < number.length; i++) {
+    sum += number[i];
+  }
+  return sum;
+  
+}
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
   // TODO
+  return getSum(numbers) / numbers.length;
+  
 }
 
 /**
@@ -28,7 +37,15 @@ function getMean(numbers) {
  */
 function getMin(numbers) {
   // TODO
-}
+  let min = number[0];
+  for(let i=0; i<number.length ; i++){
+    if(number[i]< min){
+      min = number[i];
+      }
+    }
+   return min
+  }
+
 
 /**
  * @param {number[]} numbers an array of integers
@@ -36,6 +53,13 @@ function getMin(numbers) {
  */
 function getMax(numbers) {
   // TODO
+  let max = number[0];
+  for(i=0; i<number.length; i++){
+    if(number[i]>max){
+      max = number[i];
+    }
+  }
+  return max
 }
 
 /**
@@ -44,7 +68,11 @@ function getMax(numbers) {
  */
 function getRange(numbers) {
   // TODO
-}
+  let max = getMax(numbers);
+  let min = getMin(numbers);
+
+    return max-min;
+  }
 
 /**
  * @param {number[]} numbers an array of integers
@@ -52,6 +80,13 @@ function getRange(numbers) {
  */
 function getEvens(numbers) {
   // TODO
+  const evens = [];
+  for(i=0; i<number.length; i++){
+    if(number[i]%2 === 0){
+      evens.push(number[i]);
+    }
+  }
+return evens;
 }
 
 /**
@@ -60,6 +95,13 @@ function getEvens(numbers) {
  */
 function getOdds(numbers) {
   // TODO
+  const odds = [];
+  for(i=0; i<number.length; i++){
+    if(number[i]%2 === 1 || number[i]%2 === -1){
+      odds.push(number[i]);
+    }
+  }
+  return odds
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
